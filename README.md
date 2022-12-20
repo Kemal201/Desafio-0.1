@@ -9,5 +9,6 @@ Requisitos básicos do projeto:
 - e) Editar tarefa.
 - f) Deletar tarefa.
 
+OBS: Permitido usar framework HTLM5, Bootstrap, CSS3, PHPxx, MySQL
 
 PRAZO FINAL 03/01/2023
