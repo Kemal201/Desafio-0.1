@@ -1,13 +1,17 @@
 <?php
+include_once('conexao.php');
+include_once('funcao.php');
 
-if(isset($_POST['Adicionar Nova Tarefa'])){
+if(isset($_POST['desc'])){
 
     $task = $_POST['task'];
-    $who = $_POST['who'];
-    $when = $_POST['when'];
+    $desc = $_POST['desc'];
+    // $who = $_POST['who'];
+    // $when = $_POST['when'];
 
-    if($task != '' && $who != '' && $when != ''){
-        $sql = "I"
+    if($task != ''){
+        $query = "INSERT INTO tarefa(titulo_tarefa,desc_tarefa) VALUES('$task','$desc')";
+        echo rodasql_tarefa($query, 'INSERT');
     }
 
 }
@@ -27,11 +31,24 @@ if(isset($_POST['Adicionar Nova Tarefa'])){
     <form action="cadastrar.php" method="POST">
         <label>Escreva abaixo a tarefa que você deseja anotar:</label>
         <input type="text" name="task">
-        <label>Para quem você deseja atribuir está tarefa?</label>
+        <br />
+        <label>Escreva abaixo a descrição da tarefa:</label>
+        <input type="text" name="desc">
+        <br />
+        <!-- <label>Para quem você deseja atribuir está tarefa?</label>
         <input type="text" name="who">
-        <label>Quando você deseja realizar esta tarefa?</label>
-        <input type="text" name="when">
-        <input type="button" value="Adicionar Nova Tarefa">
+        <br /> -->
+        <!-- <label>Qual data voce deseja realizar esta tarefa?</label>
+        <input id="date" type="date">
+        <br />
+        <label for="when">Que horas deseja realizar esta tarefa?</label>
+
+            <input type="time" id="when" name="when" required>
+        <br /> -->
+        <input type="submit" value="Adicionar Nova Tarefa">
+<br>
+<br>
+        <a href="listar.php">Veja aqui suas listas de tarefas</a>
     </form>
 </body>
 </html>

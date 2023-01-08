@@ -1,20 +1,18 @@
 CREATE TABLE tarefa(
-id_tarefa int(10),
+id_tarefa int(10) AUTO_INCREMENT,
 titulo_tarefa varchar(100),
 desc_tarefa varchar(1000),
-data_tarefa datetime,
-    
+
 CONSTRAINT pk_id_tarefa PRIMARY KEY(id_tarefa)
 );
 
 CREATE TABLE usuario(
-id_usuario int(10),
-f_id_tarefa int(10),
+id_usuario int(10) AUTO_INCREMENT,
+id_tarefa int(10),
 nome_usuario varchar(100),
 email_usuario varchar(1000),
 senha_usuario datetime,
     
 CONSTRAINT pk_id_usuario PRIMARY KEY(id_usuario),
-CONSTRAINT fk_id_tarefa FOREIGN KEY(fk_id_tarefa)
+CONSTRAINT fk_id_tarefa FOREIGN KEY(id_tarefa) REFERENCES tarefa(id_tarefa)
 );
-
